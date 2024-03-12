@@ -1,0 +1,45 @@
+{
+  "name": "logi.js",
+  "description": "logi.js is a JavaScript library for working with Boolean algebra, logical expressions, truth tables, the Quine-McCluskey algorithm, timing diagrams, and more.",
+  "version": "0.1.2",
+  "author": "Aniny21",
+  "license": "MIT",
+  "types": "./dist/esm/index.d.ts",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      },
+      "default": "./dist/cjs/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "jest",
+    "build": "npm run build:cjs && npm run build:esm && npm run build:browser",
+    "build:browser": "SET NODE_ENV=production && webpack --mode production && SET NODE_ENV=development && webpack --mode production",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:esm": "tsc -p tsconfig.esm.json"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.2",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.4.2",
+    "webpack": "^5.90.3",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "logi.js": "^0.1.0"
+  }
+}

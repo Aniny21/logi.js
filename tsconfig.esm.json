@@ -1,0 +1,9 @@
+{
+    "extends": ".",
+    "compilerOptions": {
+        "declaration": true,
+        "declarationMap": true,
+        "module": "es6",
+        "outDir": "dist/esm"
+    }
+}
