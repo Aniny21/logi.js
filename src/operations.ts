@@ -31,6 +31,24 @@ class Operation extends Token {
     pop() {
         return this.args.pop();
     }
+    getDepth() {
+        let max = 0;
+        for (let arg of this.args) {
+            if (arg instanceof Operation) {
+                max = Math.max(max, arg.getDepth());
+            }
+        }
+        return max + 1;
+    }
+    getMaxWidth() {
+        let maxParallel = this.args.length;
+        for (let arg of this.args) {
+            if (arg instanceof Operation) {
+                maxParallel = Math.max(maxParallel, arg.getMaxWidth());
+            }
+        }
+        return maxParallel;
+    }
 }
 
 class Value extends Token {
