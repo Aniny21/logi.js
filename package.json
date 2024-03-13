@@ -1,7 +1,7 @@
 {
   "name": "logi.js",
   "description": "logi.js is a JavaScript library for working with Boolean algebra, logical expressions, truth tables, the Quine-McCluskey algorithm, timing diagrams, and more.",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "author": "Aniny21",
   "license": "MIT",
   "types": "./dist/esm/index.d.ts",

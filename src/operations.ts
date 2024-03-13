@@ -40,14 +40,16 @@ class Operation extends Token {
         }
         return max + 1;
     }
-    getMaxWidth() {
-        let maxParallel = this.args.length;
+    getWidth() {
+        let width = 0;
         for (let arg of this.args) {
             if (arg instanceof Operation) {
-                maxParallel = Math.max(maxParallel, arg.getMaxWidth());
+                width += arg.getWidth();
+            } else if (arg instanceof Value) {
+                width += 1;
             }
         }
-        return maxParallel;
+        return width;
     }
 }
 
